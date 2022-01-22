@@ -1,0 +1,20 @@
+const Router = require('express')
+const router = new Router()
+const userInfoController = require('../controllers/userInfoController')
+
+router.post('/', userInfoController.createInfoUser)
+router.post('/create/background', userInfoController.createUserBackground)
+router.post('/update/background', userInfoController.updateUserBackground)
+router.post('/update', userInfoController.updateInfoUser)
+router.post('/update/status', userInfoController.updateStatus)
+router.post('/update/money', userInfoController.updateMoney)
+router.post('/update/takemoney', userInfoController.takeMoney)
+router.post('/update/referalmoney', userInfoController.updateReferalMoney)
+router.post('/update/referal', userInfoController.updateReferal)
+router.post('/update/role', userInfoController.updateRole)
+router.post('/update/rating', userInfoController.updateRating)
+router.get('/:id', userInfoController.getOneUserInfo)
+router.get('/customers/all', userInfoController.getCustomers)
+router.get('/find/item/:id', userInfoController.getOneUserBackground)
+
+module.exports = router
